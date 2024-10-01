@@ -11,7 +11,7 @@ export const IssueLogTable = (props) => {
     return (
         <Table aria-label="simple table" sx={{mt: 2}}>
             <TableHead>
-                <TableRow sx={{borderTop: 1, borderTopColor: 'grey.300'}}>
+                <TableRow>
                     <TableCell colSpan={1}>&nbsp;</TableCell>
                     <TableCell align="center" colSpan={4}>定点観測</TableCell>
                     <TableCell align="center" colSpan={3} sx={{borderLeft: 1, borderLeftColor: 'grey.300'}}>差分観測</TableCell>
