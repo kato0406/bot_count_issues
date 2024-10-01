@@ -6,15 +6,15 @@ export const IssueLogTable = (props) => {
         children: PropTypes.node,
         issueLogs: PropTypes.array
     }
-    const { issueLogs } = props
+    const {issueLogs} = props
 
     return (
         <Table aria-label="simple table" sx={{mt: 2}}>
             <TableHead>
-                <TableRow>
+                <TableRow sx={{borderTop: 1, borderTopColor: 'grey.300'}}>
                     <TableCell colSpan={1}>&nbsp;</TableCell>
                     <TableCell align="center" colSpan={4}>定点観測</TableCell>
-                    <TableCell align="center" colSpan={3}>差分観測</TableCell>
+                    <TableCell align="center" colSpan={3} sx={{borderLeft: 1, borderLeftColor: 'grey.300'}}>差分観測</TableCell>
                 </TableRow>
                 <TableRow>
                     <TableCell>担当者名</TableCell>
@@ -22,7 +22,7 @@ export const IssueLogTable = (props) => {
                     <TableCell>今週期限</TableCell>
                     <TableCell>処理済み</TableCell>
                     <TableCell>期限切れ</TableCell>
-                    <TableCell>期限日変更</TableCell>
+                    <TableCell sx={{borderLeft: 1, borderLeftColor: 'grey.300'}}>期限日変更</TableCell>
                     <TableCell>追加</TableCell>
                     <TableCell>消化</TableCell>
                 </TableRow>
@@ -32,7 +32,9 @@ export const IssueLogTable = (props) => {
                     <TableRow key={index}>
                         <TableCell component="th" scope="row">{issueLog.name}</TableCell>
                         {issueLog.result.map((count, index) => (
-                            <TableCell key={index}>{count}</TableCell>
+                            index === 4 ?
+                                <TableCell key={index} sx={{borderLeft: 1, borderLeftColor: 'grey.300'}}>{count}</TableCell> :
+                                <TableCell key={index}>{count}</TableCell>
                         ))}
                     </TableRow>
                 ))}
