@@ -31,11 +31,13 @@ export const IssueLogTable = (props) => {
                 {issueLogs.map((issueLog, index) => (
                     <TableRow key={index}>
                         <TableCell component="th" scope="row">{issueLog.name}</TableCell>
-                        {issueLog.result.map((count, index) => (
-                            index === 4 ?
-                                <TableCell key={index} sx={{borderLeft: 1, borderLeftColor: 'grey.300'}}>{count}</TableCell> :
-                                <TableCell key={index}>{count}</TableCell>
-                        ))}
+                        <TableCell><a href="/about">{issueLog.result.assign_count}</a></TableCell>
+                        <TableCell>{issueLog.result.due_week_count}</TableCell>
+                        <TableCell>{issueLog.result.resolve_count}</TableCell>
+                        <TableCell>{issueLog.result.expire_count}</TableCell>
+                        <TableCell sx={{borderLeft: 1, borderLeftColor: 'grey.300'}}>{issueLog.result.change_count}</TableCell>
+                        <TableCell>{issueLog.result.add_count}</TableCell>
+                        <TableCell>{issueLog.result.close_count}</TableCell>
                     </TableRow>
                 ))}
             </TableBody>
