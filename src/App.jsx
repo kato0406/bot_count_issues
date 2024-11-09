@@ -47,6 +47,8 @@ function App() {
         users: [],
     })
 
+    const [selectItem, setSelectItem] = useState('assign_count')
+
     useEffect(() => {
         (async () => {
             const response = await axios.get(apiUrl, {
@@ -136,8 +138,8 @@ function App() {
                                     <Select
                                         labelId="item"
                                         label="項目"
-                                        value={form.item}
-                                        onChange={(e) => setForm({...form, item: e.target.value})}
+                                        value={selectItem}
+                                        onChange={e => setSelectItem(e.target.value)}
                                     >
                                         <MenuItem value="assign_count">担当チケット</MenuItem>
                                         <MenuItem value="due_week_count">今週期限</MenuItem>
