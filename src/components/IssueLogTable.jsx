@@ -31,7 +31,7 @@ export const IssueLogTable = (props) => {
                 {issueLogs.map((issueLog, index) => (
                     <TableRow key={index}>
                         <TableCell component="th" scope="row">{issueLog.name}</TableCell>
-                        <TableCell><a href="/about">{issueLog.result.assign_count}</a></TableCell>
+                        <TableCell>{issueLog.result.assign_count}</TableCell>
                         <TableCell>{issueLog.result.due_week_count}</TableCell>
                         <TableCell>{issueLog.result.resolve_count}</TableCell>
                         <TableCell>{issueLog.result.expire_count}</TableCell>
